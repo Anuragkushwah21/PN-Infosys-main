@@ -31,7 +31,7 @@ function Nav() {
 
   const handleLogout = async () => {
     try {
-      const { data } = await axios.get("/api/logOut");
+      const { data } = await axios.get("https://pninfosysbackend.onrender.com/api/logOut");
       toast.success(data.message);
       setIsAuthorized(false);
       setUser(null);
