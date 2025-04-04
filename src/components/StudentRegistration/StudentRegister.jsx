@@ -27,7 +27,7 @@ const StudentRegistration = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("/api/insertStudent", formData);
+      const response = await axios.post("https://pninfosysbackend.onrender.com/api/insertStudent", formData);
       setFormData({
         name: "",
         email: "",

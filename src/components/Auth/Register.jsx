@@ -36,7 +36,7 @@ const Register = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post("/api/signUp", { name, email, password,confirmPassword,phone });
+      const response = await axios.post("https://pninfosysbackend.onrender.com/api/signUp", { name, email, password,confirmPassword,phone });
       // console.log(response.data)
       toast.success("Registration successful! Please log in.");
       navigate("/loginAdmin"); // Adjust the route based on your application

@@ -21,7 +21,7 @@ const AddPortfolio = () => {
   const fetchPortfolioItems = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("/api/getAllPortfolio");
+      const response = await axios.get("https://pninfosysbackend.onrender.com/api/getAllPortfolio");
       if (response.data && response.data.allPortfolio) {
         setPortfolio(response.data.allPortfolio);
       } else {

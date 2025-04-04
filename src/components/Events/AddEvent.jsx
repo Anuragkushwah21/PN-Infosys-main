@@ -19,7 +19,7 @@ function AddEvent() {
 
   const fetchEvents = async () => {
     try {
-      const response = await axios.get("/api/getAllEvent");
+      const response = await axios.get("https://pninfosysbackend.onrender.com/api/getAllEvent");
       setEvents(response.data.allEvent || []);
     } catch (error) {
       toast.error("Failed to fetch events.");

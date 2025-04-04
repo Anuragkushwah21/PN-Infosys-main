@@ -7,7 +7,7 @@ const Popup = () => {
   useEffect(() => {
     const fetchNotices = async () => {
       try {
-        const response = await axios.get("/api/getAllNotice");
+        const response = await axios.get("https://pninfosysbackend.onrender.com/api/getAllNotice");
         setNotices(response.data.allNotice); // Assuming response.data is an array of notices
       } catch (error) {
         console.error("Error fetching notices:", error);

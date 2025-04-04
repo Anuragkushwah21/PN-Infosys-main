@@ -10,7 +10,7 @@ function Message() {
     const fetchMessages = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('/api/getAllMessage'); // Replace with your API endpoint
+        const response = await axios.get('https://pninfosysbackend.onrender.com/api/getAllMessage'); // Replace with your API endpoint
         // console.log(response.data);
         setMessages(response.data.allMessage); // Assuming API response has "allMessage" array
       } catch (err) {

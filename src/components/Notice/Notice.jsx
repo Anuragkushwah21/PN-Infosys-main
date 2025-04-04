@@ -13,7 +13,7 @@ function Notice() {
 
   const fetchNotices = async () => {
     try {
-      const response = await axios.get("/api/getAllNotice");
+      const response = await axios.get("https://pninfosysbackend.onrender.com/api/getAllNotice");
       setNotices(response.data.allNotice);
       // setNotices(response.data.noticeCount); // Uncomment if you want to display the notice count
     } catch (error) {
@@ -30,10 +30,10 @@ function Notice() {
     try {
       if (editingId) {
         // Update notice using the _id
-        await axios.post(`/api/updateNotice/${editingId}`, formData);
+        await axios.post(`https://pninfosysbackend.onrender.com/api/updateNotice/${editingId}`, formData);
         toast.success("Notice updated successfully.");
       } else {
-        await axios.post("/api/insertNotice", formData);
+        await axios.post("https://pninfosysbackend.onrender.com/api/insertNotice", formData);
         toast.success("Notice added successfully.");
       }
       setFormData({ title: "", notice: "", link: "" });
@@ -52,7 +52,7 @@ function Notice() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/api/deleteNotice/${id}`);
+      await axios.delete(`https://pninfosysbackend.onrender.com/api/deleteNotice/${id}`);
       toast.success("Notice deleted successfully.");
       fetchNotices();
     } catch (error) {

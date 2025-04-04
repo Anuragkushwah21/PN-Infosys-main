@@ -9,7 +9,7 @@ function StudentDisplay() {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const response = await axios.get("/api/getAllStudent");
+        const response = await axios.get("https://pninfosysbackend.onrender.com/api/getAllStudent");
         setStudents(response.data.allStudent);
       } catch (error) {
         setError("Failed to fetch student data");

@@ -8,7 +8,7 @@ function OurTeam() {
   useEffect(() => {
     const fetchTeamMembers = async () => {
       try {
-        const response = await axios.get("/api/getAllOurTeam");
+        const response = await axios.get("https://pninfosysbackend.onrender.com/api/getAllOurTeam");
         setTeamMembers(response.data.allOurTeam); // Adjust based on your API response format
         setLoading(false);
       } catch (error) {

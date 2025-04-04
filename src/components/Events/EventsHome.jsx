@@ -9,7 +9,7 @@ function EventsHome() {
   // Fetch data from the API
   useEffect(() => {
     axios
-      .get("/api/getAllEvent")
+      .get("https://pninfosysbackend.onrender.com/api/getAllEvent")
       .then((response) => {
         setEvents(response.data.allEvent); // Assuming the API returns an array of event objects
         setLoading(false);

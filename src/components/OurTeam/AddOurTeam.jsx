@@ -19,9 +19,9 @@ const AddOurTeam = () => {
   const fetchTeamMembers = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("/api/getAllOurTeam");
+      const response = await axios.get("https://pninfosysbackend.onrender.com/api/getAllOurTeam");
       setTeamMembers(response.data.allOurTeam);
-      navigate("/addOurTeam");
+      navigate("https://pninfosysbackend.onrender.com/addOurTeam");
     } catch (error) {
       toast.error("Failed to fetch team members.");
     } finally {
@@ -36,7 +36,7 @@ const AddOurTeam = () => {
     formData.append("image", newMember.image);
 
     try {
-      const response = await axios.post("/api/insertOurTeam", formData);
+      const response = await axios.post("https://pninfosysbackend.onrender.com/api/insertOurTeam", formData);
       toast.success("Team member added successfully.");
       setTeamMembers([...teamMembers, response.data]);
       setNewMember({ name: "", description: "", image: null });
@@ -47,7 +47,7 @@ const AddOurTeam = () => {
 
   const handleDeleteMember = async (id) => {
     try {
-      await axios.delete(`/api/deleteOurTeam/${id}`);
+      await axios.delete(`https://pninfosysbackend.onrender.com/api/deleteOurTeam/${id}`);
       toast.success("Team member deleted successfully.");
       setTeamMembers(teamMembers.filter((member) => member.id !== id));
     } catch (error) {

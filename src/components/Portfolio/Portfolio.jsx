@@ -9,7 +9,7 @@ function Portfolio() {
   // Fetch data from the API
   useEffect(() => {
     axios
-      .get('/api/getAllPortfolio')
+      .get('https://pninfosysbackend.onrender.com/api/getAllPortfolio')
       .then((response) => {
         setPortfolioItems(response.data.allPortfolio); // Assuming the API returns an array of portfolio objects
         setLoading(false);

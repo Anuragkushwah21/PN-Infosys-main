@@ -19,7 +19,7 @@ const Login = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post("/api/signIn", { email, password });
+      const response = await axios.post("https://pninfosysbackend.onrender.com/api/signIn", { email, password });
       toast.success("Login successful!");
       navigate("/"); // Adjust the route based on your application
     } catch (error) {

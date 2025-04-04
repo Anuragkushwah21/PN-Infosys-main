@@ -17,7 +17,7 @@ function Placement() {
   useEffect(() => {
     const fetchPlacements = async () => {
       try {
-        const response = await axios.get("/api/getAllPlacement");
+        const response = await axios.get("https://pninfosysbackend.onrender.com/api/getAllPlacement");
         setPlacements(response.data.allPlacement);
       } catch (error) {
         console.error("Error fetching placements:", error);

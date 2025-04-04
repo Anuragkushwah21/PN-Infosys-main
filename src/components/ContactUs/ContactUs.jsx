@@ -23,7 +23,7 @@ function ContactUs() {
     setLoading(true);
 
     try {
-      const response = await axios.post("/api/insertMessage", formData);
+      const response = await axios.post("https://pninfosysbackend.onrender.com/api/insertMessage", formData);
       if (response.status === 200) {
         toast.success("Message sent successfully!", {
           position: "top-center",

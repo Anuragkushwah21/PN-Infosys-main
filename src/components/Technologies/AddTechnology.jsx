@@ -36,14 +36,14 @@ function AddTechnology() {
       setLoading(true);
       if (editing) {
         // Edit functionality
-        await axios.post(`/api/updateTechnology/${formData.id}`, form, {
+        await axios.post(`https://pninfosysbackend.onrender.com/api/updateTechnology/${formData.id}`, form, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         console.log()
         toast.success("Technology updated successfully!");
       } else {
         // Add functionality
-        await axios.post("/api/insertTechnology", form, {
+        await axios.post("https://pninfosysbackend.onrender.com/api/insertTechnology", form, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         toast.success("Technology added successfully!");
@@ -60,7 +60,7 @@ function AddTechnology() {
 
   const fetchTechnologies = async () => {
     try {
-      const response = await axios.get("/api/getAllTechnology");
+      const response = await axios.get("https://pninfosysbackend.onrender.com/api/getAllTechnology");
       setTechnologies(response.data.allTechnology);
     } catch (error) {
       console.error("Error fetching technologies:", error);
@@ -80,7 +80,7 @@ function AddTechnology() {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this technology?")) {
       try {
-        await axios.delete(`/api/deleteTechnology/${id}`);
+        await axios.delete(`https://pninfosysbackend.onrender.com/api/deleteTechnology/${id}`);
         toast.success("Technology deleted successfully!");
         fetchTechnologies();
       } catch (error) {

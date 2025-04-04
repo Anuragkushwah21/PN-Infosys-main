@@ -9,7 +9,7 @@ function Technologies() {
   useEffect(() => {
     const fetchTechnologies = async () => {
       try {
-        const response = await axios.get("/api/getAllTechnology");
+        const response = await axios.get("https://pninfosysbackend.onrender.com/api/getAllTechnology");
         // console.log(response.data)
         setTechnologies(response.data.allTechnology); // Assuming response data is an array of technologies
       } catch (error) {

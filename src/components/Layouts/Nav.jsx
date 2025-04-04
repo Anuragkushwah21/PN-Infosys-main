@@ -15,7 +15,7 @@ function Nav() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get("/api/getUser");
+        const response = await axios.get("https://pninfosysbackend.onrender.com/api/getUser");
         // console.log(response.data.data);
         setUser(response.data.data);
         setIsAuthorized(true);
